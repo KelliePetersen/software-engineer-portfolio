@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #f5f2ec;
+  --secondary: hsl(355, 53%, 81%);
+  --secondary-light: #fbf1f1;
+  --green: #49a26c;
+  --text: #352831;
+  --pink: #e8b4b8;
+  --pink-light: #f2d0d3;
+  --muted: #8a8580;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 17, 24, 0.2);
+  border-radius: 3px;
+}
+
+.wrapper {
+  padding: 1.5rem 2rem;
+  height: 100dvh;
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  background-image: url('/bg.svg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem 3rem;
+  }
+}

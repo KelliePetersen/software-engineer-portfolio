@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Large arcs -->
+  <circle cx="1200" cy="-80" r="520" fill="none" stroke="#e8b4b8" stroke-width="1.2" opacity="0.5"/>
+  <circle cx="1200" cy="-80" r="680" fill="none" stroke="#e8b4b8" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="1200" cy="-80" r="860" fill="none" stroke="#d4a0a4" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- Secondary arc cluster bottom-left -->
+  <circle cx="-60" cy="960" r="420" fill="none" stroke="#6e5968" stroke-width="1" opacity="0.15"/>
+  <circle cx="-60" cy="960" r="580" fill="none" stroke="#6e5968" stroke-width="0.7" opacity="0.1"/>
+
+  <!-- Diagonal lines -->
+  <line x1="0" y1="320" x2="480" y2="0" stroke="#c9a0a4" stroke-width="0.8" opacity="0.25"/>
+  <line x1="0" y1="520" x2="720" y2="0" stroke="#c9a0a4" stroke-width="0.6" opacity="0.18"/>
+  <line x1="960" y1="900" x2="1440" y2="200" stroke="#c9a0a4" stroke-width="0.8" opacity="0.2"/>
+
+  <!-- Dot grid -->
+  <g fill="#6e5968" opacity="0.12">
+    <circle cx="80"  cy="80"  r="1.5"/>
+    <circle cx="160" cy="80"  r="1.5"/>
+    <circle cx="240" cy="80"  r="1.5"/>
+    <circle cx="320" cy="80"  r="1.5"/>
+    <circle cx="80"  cy="160" r="1.5"/>
+    <circle cx="160" cy="160" r="1.5"/>
+    <circle cx="240" cy="160" r="1.5"/>
+    <circle cx="320" cy="160" r="1.5"/>
+    <circle cx="80"  cy="240" r="1.5"/>
+    <circle cx="160" cy="240" r="1.5"/>
+    <circle cx="240" cy="240" r="1.5"/>
+    <circle cx="320" cy="240" r="1.5"/>
+  </g>
+
+  <!-- Floating blobs -->
+  <ellipse cx="740" cy="480" rx="320" ry="200" fill="#e8b4b8" opacity="0.06" transform="rotate(-20 740 480)"/>
+  <ellipse cx="300" cy="700" rx="260" ry="160" fill="#6e5968" opacity="0.05" transform="rotate(15 300 700)"/>
+
+  <!-- Small accent squares -->
+  <rect x="1340" y="820" width="8" height="8" fill="none" stroke="#6e5968" stroke-width="1" opacity="0.3" transform="rotate(30 1344 824)"/>
+  <rect x="100"  y="800" width="6" height="6" fill="none" stroke="#e8b4b8" stroke-width="1" opacity="0.4" transform="rotate(15 103 803)"/>
+  <rect x="680"  y="60"  width="7" height="7" fill="none" stroke="#6e5968" stroke-width="1" opacity="0.25" transform="rotate(45 683 63)"/>
+</svg>
