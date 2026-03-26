@@ -49,7 +49,7 @@ function Footer() {
         </a>
       </div>
       <span className="footer-copyright">
-        © {currentYear} Kellie Petersen. All rights reserved.
+        © {currentYear} • Kellie Petersen. All rights reserved.
       </span>
     </footer>
   )

@@ -24,7 +24,7 @@
 }
 
 .hero-tagline {
-  font-size: 0.75rem;
+  font-size: 0.825rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -32,9 +32,11 @@
 }
 
 .hero-title {
+  font-family: 'Inter', sans-serif;
   font-size: clamp(3.5rem, 12vw, 11rem);
-  font-weight: 1000;
+  font-weight: 900;
   line-height: 0.85;
+  letter-spacing: -0.02em;
   margin-bottom: 2rem;
   text-transform: uppercase;
   text-shadow: var(--hero-title-shadow);
@@ -51,8 +53,8 @@
 }
 
 .hero-desc {
-  max-width: 380px;
-  font-size: 0.95rem;
+  max-width: 400px;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.625;
   color: var(--text-medium);
