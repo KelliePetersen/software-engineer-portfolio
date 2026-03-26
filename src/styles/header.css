@@ -1,5 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header-logo {
   font-weight: 900;
   font-size: 1rem;
   letter-spacing: 0.04em;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & svg {
+    width: 1rem;
+    height: 1rem;
+  }
 }

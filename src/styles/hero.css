@@ -3,9 +3,9 @@
 }
 
 .hero-badge {
-  border: 1.5px solid var(--secondary);
-  color: var(--secondary);
-  background: var(--secondary-light);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  background: var(--tertiary);
   border-radius: 1rem;
   padding: 0.3rem 0.9rem;
   font-size: 0.7rem;
@@ -20,6 +20,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  color: var(--text-medium);
 }
 
 .hero-title {
@@ -28,7 +29,7 @@
   line-height: 0.85;
   margin-bottom: 2rem;
   text-transform: uppercase;
-  /* text-shadow: 0 0 40px rgba(255, 145, 89, 0.2); */
+  text-shadow: var(--hero-title-shadow);
 }
 
 .hero-subheading-wrapper {
@@ -52,6 +53,7 @@
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.625;
+  color: var(--text-medium);
 }
 
 .hero-employment {
@@ -67,7 +69,7 @@
     display: block;
     width: 40px;
     height: 2px;
-    background: var(--secondary);
+    background: var(--primary);
     margin-right: 0.7rem;
   }
 }
@@ -76,9 +78,13 @@
   width: clamp(150px, 25vw, 250px);
   height: clamp(150px, 25vw, 250px);
   border-radius: 50%;
-  background: linear-gradient(135deg, #eebfbb 0%, #d99997 100%);
-  box-shadow: 5px 10px 30px 10px rgba(217, 153, 151, 0.6);
-  color: white;
+  background: linear-gradient(
+    to bottom right,
+    var(--btn-gradient-start) 0%,
+    var(--btn-gradient-end) 100%
+  );
+  box-shadow: 5px 10px 30px 10px var(--btn-shadow);
+  color: var(--text-alt);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,11 +97,11 @@
 
   &:hover {
     transform: scale(1.06);
-    box-shadow: 5px 10px 30px 10px rgba(217, 153, 151, 0.3);
+    box-shadow: 5px 10px 30px 10px var(--btn-shadow-hover);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--secondary);
+    outline: 2px solid var(--primary);
     outline-offset: 4px;
   }
 
