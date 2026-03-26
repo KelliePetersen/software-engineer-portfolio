@@ -1,8 +1,10 @@
 function Header() {
   return (
-    <div className="header">
-      <div className="header-logo">K.</div>
-    </div>
+    <header className="header">
+      <a className="header-logo" href="/">
+        K.
+      </a>
+    </header>
   )
 }
 

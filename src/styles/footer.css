@@ -6,15 +6,14 @@ footer {
   gap: 1rem;
 }
 
-.contact-links {
+.footer-contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem 1.5rem;
 }
 
-.contact-link {
+.footer-contact-link {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-weight: 900;
   font-size: 0.8rem;
@@ -29,16 +28,13 @@ footer {
 
   & svg {
     width: 1rem;
+    height: 1rem;
     color: var(--secondary);
     margin-right: 0.5rem;
   }
 }
 
-.contact-link-arrow {
-  font-size: 1.1rem;
-}
-
-.copyright {
+.footer-copyright {
   font-size: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.2em;
