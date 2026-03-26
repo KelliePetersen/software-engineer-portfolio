@@ -10,6 +10,7 @@
 
 :root {
   --background: #f5f2ec;
+  --background-opacity: 1;
   --primary: #d99997;
   --tertiary: #fbf1f1;
   --text: #352831;
@@ -26,6 +27,7 @@
 
 [data-theme='dark'] {
   --background: #090f14;
+  --background-opacity: 0.5;
   --primary: #ff7a2f;
   --tertiary: #2a1a1d;
   --text: #e3e7ed;
@@ -73,12 +75,23 @@ a {
   flex-direction: column;
   justify-content: space-between;
   gap: 3rem;
-  background-image: url('/bg.svg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
 
   @media screen and (min-width: 768px) {
     padding: 2rem 3rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/bg.svg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    opacity: var(--background-opacity);
+    z-index: -1;
   }
 }
