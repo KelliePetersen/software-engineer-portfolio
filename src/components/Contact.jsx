@@ -5,6 +5,7 @@ import LinkedInIcon from './icons/LinkedInIcon'
 import GitHubIcon from './icons/GitHubIcon'
 import GitLabIcon from './icons/GitLabIcon'
 import MessageSquareIcon from './icons/MessageSquareIcon'
+import ContactForm from './ContactForm'
 
 function ContactButton({ onClick }) {
   return (
@@ -78,7 +79,7 @@ function ContactDialog({ dialogRef, onClose }) {
             <span>gitlab.com/kelliepetersen</span>
           </a>
         </div>
-        <div className="contact-form-placeholder"></div>
+        <ContactForm closeModal={onClose} />
       </div>
     </dialog>
   )
