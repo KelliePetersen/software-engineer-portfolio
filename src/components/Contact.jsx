@@ -28,58 +28,60 @@ function ContactDialog({ dialogRef, onClose }) {
       onClick={handleBackdropClick}
       onClose={onClose}
     >
-      <button
-        className="contact-dialog-close"
-        onClick={onClose}
-        aria-label="Close"
-      >
-        <CrossIcon />
-      </button>
-      <h2 className="contact-dialog-title">Get in touch</h2>
       <div className="contact-dialog-wrapper">
+        <button
+          className="contact-dialog-close"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          <CrossIcon />
+        </button>
+        <h2 className="contact-dialog-title">Get in touch</h2>
         <div className="contact-dialog-content">
-          <p className="contact-dialog-desc">
-            Message me here directly, or contact me through one of the links
-            below, and I&apos;ll get back to you soon. Thank you!
-          </p>
-          <a
-            className="contact-dialog-link"
-            href="mailto:hello@kelliepetersen.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <EmailIcon />
-            <span>hello@kelliepetersen.com</span>
-          </a>
-          <a
-            className="contact-dialog-link"
-            href="https://www.linkedin.com/in/kelliepetersen/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedInIcon />
-            <span>linkedin.com/in/kelliepetersen</span>
-          </a>
-          <a
-            className="contact-dialog-link"
-            href="https://www.github.com/kelliepetersen/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GitHubIcon />
-            <span>github.com/kelliepetersen</span>
-          </a>
-          <a
-            className="contact-dialog-link"
-            href="https://www.gitlab.com/kelliepetersen/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GitLabIcon />
-            <span>gitlab.com/kelliepetersen</span>
-          </a>
+          <div className="contact-dialog-text">
+            <p className="contact-dialog-desc">
+              Message me here directly, or contact me through one of the links
+              below, and I&apos;ll get back to you soon. Thank you!
+            </p>
+            <a
+              className="contact-dialog-link"
+              href="mailto:hello@kelliepetersen.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <EmailIcon />
+              <span>hello@kelliepetersen.com</span>
+            </a>
+            <a
+              className="contact-dialog-link"
+              href="https://www.linkedin.com/in/kelliepetersen/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon />
+              <span>linkedin.com/in/kelliepetersen</span>
+            </a>
+            <a
+              className="contact-dialog-link"
+              href="https://www.github.com/kelliepetersen/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon />
+              <span>github.com/kelliepetersen</span>
+            </a>
+            <a
+              className="contact-dialog-link"
+              href="https://www.gitlab.com/kelliepetersen/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitLabIcon />
+              <span>gitlab.com/kelliepetersen</span>
+            </a>
+          </div>
+          <ContactForm closeModal={onClose} />
         </div>
-        <ContactForm closeModal={onClose} />
       </div>
     </dialog>
   )

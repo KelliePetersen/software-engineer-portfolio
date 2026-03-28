@@ -9,7 +9,6 @@
   max-width: 90dvw;
   height: max-content;
   max-height: 90dvh;
-  padding: 2rem;
   border: none;
   border-radius: 1rem;
   background: var(--background);
@@ -42,10 +41,6 @@
   &[open]::backdrop {
     opacity: 1;
   }
-
-  @media screen and (min-width: 1300px) {
-    padding: 3rem 4rem 4rem;
-  }
 }
 
 @starting-style {
@@ -56,6 +51,14 @@
 
   .contact-dialog[open]::backdrop {
     opacity: 0;
+  }
+}
+
+.contact-dialog-wrapper {
+  padding: 2rem;
+
+  @media screen and (min-width: 1300px) {
+    padding: 3rem 4rem 4rem;
   }
 }
 
@@ -83,7 +86,7 @@
   font-size: clamp(1rem, 12vw, 9rem);
 }
 
-.contact-dialog-wrapper {
+.contact-dialog-content {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
@@ -92,7 +95,7 @@
   margin: 1rem 0 0 0.5rem;
 }
 
-.contact-dialog-content {
+.contact-dialog-text {
   max-width: 100%;
 }
 
