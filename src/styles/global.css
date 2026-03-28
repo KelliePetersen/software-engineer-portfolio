@@ -67,6 +67,15 @@ a {
   border-radius: 3px;
 }
 
+h1,
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: var(--hero-title-shadow);
+}
+
 .wrapper {
   padding: 1.5rem 2rem;
   height: 100dvh;

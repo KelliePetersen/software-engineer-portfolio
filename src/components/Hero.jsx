@@ -1,4 +1,4 @@
-import EmailIcon from './icons/EmailIcon'
+import Contact from './Contact'
 
 function Hero() {
   return (
@@ -21,10 +21,7 @@ function Hero() {
           <div className="hero-employment">Currently working at Cubiko</div>
         </div>
       </div>
-      <a className="hero-email-btn" href="mailto:hello@kelliepetersen.com">
-        <EmailIcon />
-        <span>Email Me</span>
-      </a>
+      <Contact />
     </div>
   )
 }
