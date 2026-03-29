@@ -142,8 +142,8 @@
   border-radius: 50%;
   background: linear-gradient(
     to bottom right,
-    var(--btn-gradient-start) 0%,
-    var(--btn-gradient-end) 100%
+    var(--secondary) 0%,
+    var(--primary) 100%
   );
   cursor: pointer;
   box-shadow: 5px 10px 30px 10px var(--btn-shadow);
