@@ -14,14 +14,9 @@ function ContactForm({ closeModal }) {
     e.preventDefault()
     setStatus('sending')
     try {
-      await fetch('https://submit-form.com/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(fields),
-      })
+      const body = new URLSearchParams({ 'form-name': 'contact', ...fields })
+      const res = await fetch('/', { method: 'POST', body })
+      if (!res.ok) throw new Error(res.status)
       setStatus('sent')
       setFields(INITIAL_STATE)
     } catch {
@@ -49,7 +44,8 @@ function ContactForm({ closeModal }) {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className="contact-form" onSubmit={handleSubmit} name="contact" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <div className="contact-form-field">
         <label className="screen-reader-only" htmlFor="contact-name">
           Name

@@ -7,6 +7,12 @@ import prettier from 'eslint-config-prettier'
 export default [
   js.configs.recommended,
   {
+    files: ['*.config.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
