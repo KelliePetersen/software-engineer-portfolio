@@ -7,3 +7,8 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>
 )
+
+/* Avoid animating during page load, particularly jarring on dark-mode */
+window.addEventListener('load', () => {
+  document.documentElement.classList.add('ready')
+})

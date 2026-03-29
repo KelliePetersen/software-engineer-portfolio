@@ -1,6 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+/* Avoid animating during page load, particularly jarring on dark-mode */
+:where(html.ready) * {
   transition:
     color 0.2s,
     background 0.2s,

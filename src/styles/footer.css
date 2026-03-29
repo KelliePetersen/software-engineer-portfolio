@@ -17,12 +17,12 @@ footer {
   align-items: center;
   font-weight: 900;
   font-size: 0.8rem;
-  transition: opacity 0.2s;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--text);
 
   &:hover {
-    opacity: 0.6;
+    color: var(--primary);
   }
 
   & svg {
