@@ -22,8 +22,11 @@ function App() {
     <div className="app">
       <MatterBackground ref={matterRef} />
       <div className="wrapper">
-        <Header theme={theme} toggleTheme={toggleTheme} onSpawnCircle={handleSpawnCircle} />
-        <Hero onSpawnParenthesis={handleSpawnParenthesis} />
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <Hero
+          onSpawnCircle={handleSpawnCircle}
+          onSpawnParenthesis={handleSpawnParenthesis}
+        />
         <Footer />
       </div>
     </div>

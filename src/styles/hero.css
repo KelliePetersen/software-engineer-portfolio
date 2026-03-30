@@ -10,7 +10,8 @@
   align-self: center;
 }
 
-.hero-badge {
+.hero-badge-btn {
+  cursor: pointer;
   border: 1.5px solid var(--primary);
   color: var(--primary);
   background: var(--tertiary);
@@ -19,8 +20,19 @@
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
   width: fit-content;
+  box-shadow:
+    5px 5px 1px 1px var(--primary),
+    0px 0px 5px 5px var(--hero-badge-shadow-soft);
+
+  &:hover {
+    box-shadow:
+      0px 0px 1px 1px var(--primary),
+      0px 0px 5px 5px var(--hero-badge-shadow-soft);
+    background: var(--primary);
+    color: var(--text-alt);
+  }
 }
 
 .hero-tagline {
@@ -53,6 +65,32 @@
   font-weight: 300;
   line-height: 1.625;
   color: var(--text-medium);
+}
+
+.hero-clojure-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary);
+
+  &:hover {
+    &::before,
+    &::after {
+      display: initial;
+    }
+  }
+
+  &::before {
+    display: none;
+    content: '(';
+  }
+
+  &::after {
+    display: none;
+    content: ')';
+  }
 }
 
 .hero-employment {

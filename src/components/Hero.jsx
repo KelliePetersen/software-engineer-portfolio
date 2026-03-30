@@ -1,12 +1,18 @@
 import Contact from './Contact'
 
-function Hero({ onSpawnParenthesis }) {
+function Hero({ onSpawnCircle, onSpawnParenthesis }) {
   const experience = new Date().getFullYear() - 2018
 
   return (
     <div className="hero">
       <div className="hero-wrapper">
-        <div className="hero-badge">SOFTWARE ENGINEER</div>
+        <button
+          className="hero-badge-btn"
+          onClick={onSpawnCircle}
+          aria-label="Spawn a falling circle to demonstrate my playful side to you"
+        >
+          SOFTWARE ENGINEER
+        </button>
         <p className="hero-tagline">
           {experience}+ Years Crafting Engaging Websites and Applications
         </p>
@@ -17,7 +23,7 @@ function Hero({ onSpawnParenthesis }) {
           <p className="hero-desc">
             Specialising in React, TypeScript and{' '}
             <button
-              className="spawn-parantheses-btn"
+              className="hero-clojure-btn"
               onClick={onSpawnParenthesis}
               aria-label="Spawn a falling parantheses"
             >
