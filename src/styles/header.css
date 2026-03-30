@@ -36,3 +36,27 @@
     height: 1rem;
   }
 }
+
+/* This should hide it on touchscreen devices, where there's no interaction with the matter js items */
+/* And on screens that are too small to avoid cluttering the UI */
+@media (hover: none) and (pointer: coarse), (max-width: 600px) {
+  .silly-mode-btn {
+    display: none;
+  }
+}
+
+.silly-mode-btn {
+  background: var(--toggle-btn-bg);
+  color: gray;
+  border: none;
+  border: 1px solid var(--toggle-btn-bg);
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+
+  &:hover {
+    border: 1px solid gray;
+  }
+}

@@ -33,6 +33,14 @@ const MatterBackground = forwardRef(function MatterBackground(_, ref) {
       Matter.Composite.add(engine.world, circle)
     },
 
+    clearBodies() {
+      const engine = engineRef.current
+      if (!engine) return
+      Matter.Composite.allBodies(engine.world).forEach((body) => {
+        if (!body.isStatic) Matter.Composite.remove(engine.world, body)
+      })
+    },
+
     spawnParenthesis() {
       const engine = engineRef.current
       if (!engine) return

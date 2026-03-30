@@ -28,6 +28,7 @@
   --hero-title-shadow: none;
   --scrollbar-thumb: rgba(26, 17, 24, 0.2);
   --selection-color: #e3e7ed;
+  --toggle-btn-bg: #ddd;
 }
 
 [data-theme='dark'] {
@@ -46,6 +47,7 @@
   --hero-title-shadow: 0 0 40px rgba(255, 145, 89, 0.2);
   --scrollbar-thumb: rgba(237, 232, 227, 0.2);
   --selection-color: #531e00;
+  --toggle-btn-bg: #111c25;
 }
 
 body {

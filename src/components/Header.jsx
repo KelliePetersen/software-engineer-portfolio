@@ -1,13 +1,23 @@
 import MoonIcon from './icons/MoonIcon'
 import SunIcon from './icons/SunIcon'
 
-function Header({ theme, toggleTheme }) {
+function Header({ theme, toggleTheme, sillyMode, onToggleSillyMode }) {
+  const sillyModeLabel = sillyMode ? 'Serious Mode' : 'Silly Mode'
+
   return (
     <header className="header">
       <a className="header-logo" href="/">
         K.
       </a>
       <div className="header-actions">
+        <button
+          className="silly-mode-btn"
+          onClick={onToggleSillyMode}
+          aria-label={sillyModeLabel}
+          title={sillyModeLabel}
+        >
+          {sillyModeLabel}
+        </button>
         <button
           className="theme-toggle"
           onClick={toggleTheme}
