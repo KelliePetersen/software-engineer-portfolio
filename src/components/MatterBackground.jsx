@@ -32,6 +32,32 @@ const MatterBackground = forwardRef(function MatterBackground(_, ref) {
 
       Matter.Composite.add(engine.world, circle)
     },
+
+    spawnParenthesis() {
+      const engine = engineRef.current
+      if (!engine) return
+
+      const colorKey = Math.random() < 0.5 ? '--primary' : '--secondary'
+      const color = getComputedStyle(document.documentElement)
+        .getPropertyValue(colorKey)
+        .trim()
+      const char = Math.random() < 0.5 ? '(' : ')'
+      const fontSize = 36 + Math.random() * 28
+      const x = fontSize + Math.random() * (window.innerWidth - fontSize * 2)
+
+      const body = Matter.Bodies.rectangle(x, -fontSize, fontSize * 0.4, fontSize * 1.2, {
+        restitution: 0.5,
+        friction: 0.15,
+        frictionAir: 0.01,
+        render: { fillStyle: 'transparent', strokeStyle: 'transparent', lineWidth: 0 },
+      })
+      body._colorKey = colorKey
+      body._color = color
+      body._char = char
+      body._fontSize = fontSize
+
+      Matter.Composite.add(engine.world, body)
+    },
   }))
 
   useEffect(() => {
@@ -107,6 +133,28 @@ const MatterBackground = forwardRef(function MatterBackground(_, ref) {
 
     Composite.add(engine.world, [ground, leftWall, rightWall])
 
+    function drawParentheses() {
+      const ctx = render.context
+      Composite.allBodies(engine.world).forEach((body) => {
+        if (!body._char) return
+        const h = body._fontSize
+        const dir = body._char === '(' ? 1 : -1
+        ctx.save()
+        ctx.translate(body.position.x, body.position.y)
+        ctx.rotate(body.angle)
+        ctx.strokeStyle = body._color
+        ctx.lineWidth = h * 0.14
+        ctx.lineCap = 'round'
+        ctx.beginPath()
+        ctx.moveTo(dir * h * 0.08, -h * 0.48)
+        ctx.quadraticCurveTo(-dir * h * 0.28, 0, dir * h * 0.08, h * 0.48)
+        ctx.stroke()
+        ctx.restore()
+      })
+    }
+
+    Matter.Events.on(render, 'afterRender', drawParentheses)
+
     Render.run(render)
     Runner.run(runner, engine)
 
@@ -147,7 +195,12 @@ const MatterBackground = forwardRef(function MatterBackground(_, ref) {
       const style = getComputedStyle(document.documentElement)
       Composite.allBodies(engine.world).forEach((body) => {
         if (!body.isStatic && body._colorKey) {
-          body.render.fillStyle = style.getPropertyValue(body._colorKey).trim()
+          const newColor = style.getPropertyValue(body._colorKey).trim()
+          if (body._char) {
+            body._color = newColor
+          } else {
+            body.render.fillStyle = newColor
+          }
         }
       })
     })
@@ -161,6 +214,7 @@ const MatterBackground = forwardRef(function MatterBackground(_, ref) {
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('resize', handleResize)
       themeObserver.disconnect()
+      Matter.Events.off(render, 'afterRender', drawParentheses)
       Render.stop(render)
       Runner.stop(runner)
       Engine.clear(engine)

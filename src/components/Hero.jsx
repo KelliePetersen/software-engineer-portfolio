@@ -1,6 +1,6 @@
 import Contact from './Contact'
 
-function Hero() {
+function Hero({ onSpawnParenthesis }) {
   const experience = new Date().getFullYear() - 2018
 
   return (
@@ -15,7 +15,15 @@ function Hero() {
         </h1>
         <div className="hero-subheading-wrapper">
           <p className="hero-desc">
-            Specialising in React, TypeScript and Clojure.
+            Specialising in React, TypeScript and{' '}
+            <button
+              className="spawn-parantheses-btn"
+              onClick={onSpawnParenthesis}
+              aria-label="Spawn a falling parantheses"
+            >
+              Clojure
+            </button>
+            .
             <br />
             Interested in working with talented teams and building high-impact
             products that make a difference.

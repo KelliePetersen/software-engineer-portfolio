@@ -14,12 +14,16 @@ function App() {
     matterRef.current?.spawnCircle()
   }
 
+  function handleSpawnParenthesis() {
+    matterRef.current?.spawnParenthesis()
+  }
+
   return (
     <div className="app">
       <MatterBackground ref={matterRef} />
       <div className="wrapper">
         <Header theme={theme} toggleTheme={toggleTheme} onSpawnCircle={handleSpawnCircle} />
-        <Hero />
+        <Hero onSpawnParenthesis={handleSpawnParenthesis} />
         <Footer />
       </div>
     </div>
