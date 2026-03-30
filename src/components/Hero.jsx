@@ -1,12 +1,14 @@
 import Contact from './Contact'
 
 function Hero() {
+  const experience = new Date().getFullYear() - 2018
+
   return (
     <div className="hero">
       <div className="hero-wrapper">
         <div className="hero-badge">SOFTWARE ENGINEER</div>
         <p className="hero-tagline">
-          8+ Years Crafting Engaging Websites and Applications
+          {experience}+ Years Crafting Engaging Websites and Applications
         </p>
         <h1 className="hero-title">
           Kellie <br /> Petersen
