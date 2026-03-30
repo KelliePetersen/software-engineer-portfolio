@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useRef } from 'react'
 import CrossIcon from './icons/CrossIcon'
 import EmailIcon from './icons/EmailIcon'
 import LinkedInIcon from './icons/LinkedInIcon'
@@ -88,26 +88,33 @@ function ContactDialog({ dialogRef, onClose }) {
 }
 
 function Contact() {
-  const [contactOpen, setContactOpen] = useState(false)
   const dialogRef = useRef(null)
 
-  useEffect(() => {
+  function openModal() {
+    dialogRef.current?.showModal()
+  }
+
+  function closeModal() {
     const dialog = dialogRef.current
     if (!dialog) return
-    if (contactOpen) {
-      dialog.showModal()
-    } else {
-      dialog.close()
+    if (dialog.open) {
+      // Some browsers (e.g. Safari, Firefox) don't animate closing dialog, so classes must be added
+      dialog.classList.add('closing')
+      dialog.addEventListener(
+        'transitionend',
+        () => {
+          dialog.classList.remove('closing')
+          dialog.close()
+        },
+        { once: true }
+      )
     }
-  }, [contactOpen])
+  }
 
   return (
     <>
-      <ContactDialog
-        dialogRef={dialogRef}
-        onClose={() => setContactOpen(false)}
-      />
-      <ContactButton onClick={() => setContactOpen(true)} />
+      <ContactDialog dialogRef={dialogRef} onClose={closeModal} />
+      <ContactButton onClick={openModal} />
     </>
   )
 }

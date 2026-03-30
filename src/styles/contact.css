@@ -23,11 +23,6 @@
     display 0.25s allow-discrete,
     overlay 0.25s allow-discrete;
 
-  &[open] {
-    opacity: 1;
-    translate: 0 0;
-  }
-
   &::backdrop {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(3px);
@@ -38,8 +33,22 @@
       overlay 0.25s allow-discrete;
   }
 
+  &[open] {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  &.closing {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+
   &[open]::backdrop {
     opacity: 1;
+  }
+
+  &.closing::backdrop {
+    opacity: 0;
   }
 }
 
