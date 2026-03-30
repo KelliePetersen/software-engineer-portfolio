@@ -12,6 +12,7 @@
     "format": "prettier --write src"
   },
   "dependencies": {
+    "matter-js": "^0.20.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

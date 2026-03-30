@@ -4,6 +4,12 @@
   justify-content: space-between;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .header-logo {
   font-weight: 900;
   font-size: 1rem;

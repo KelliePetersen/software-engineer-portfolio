@@ -86,6 +86,8 @@ h2 {
 }
 
 .wrapper {
+  position: relative;
+  z-index: 1;
   padding: 1.5rem 2rem;
   height: 100dvh;
   min-height: max-content;
