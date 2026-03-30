@@ -25,6 +25,7 @@ function Header({ theme, toggleTheme, sillyMode, onToggleSillyMode }) {
           aria-pressed={theme === 'dark'}
         >
           {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
       </div>
     </header>
