@@ -5,9 +5,11 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import MatterBackground from './components/MatterBackground'
 import useTheme from './hooks/useTheme'
+import useCursor from './hooks/useCursor'
 
 function App() {
   const { theme, toggleTheme } = useTheme()
+  useCursor()
   const matterRef = useRef(null)
 
   function handleSpawnCircle() {

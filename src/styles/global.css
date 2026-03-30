@@ -53,6 +53,10 @@ body {
   color: var(--text);
   font-family: sans-serif;
   font-family: 'DM Sans', 'Inter', sans-serif;
+  /* Custom cursor */
+  @media (pointer: fine) {
+    cursor: none;
+  }
 }
 
 a {

@@ -1,0 +1,96 @@
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  overflow: visible;
+
+  & .cursor-dot,
+  & .cursor-ring {
+    opacity: 0;
+  }
+}
+
+.cursor-layer--visible {
+  & .cursor-dot {
+    opacity: 1;
+  }
+
+  & .cursor-ring {
+    opacity: 0.5;
+  }
+}
+
+.cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  translate: -50% -50%;
+  transition:
+    width 0.15s ease,
+    height 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.cursor-dot--hover {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+}
+
+.cursor-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  translate: -50% -50%;
+  opacity: 0.5;
+  transition:
+    width 0.15s ease,
+    height 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.cursor-ring--hover {
+  width: 52px;
+  height: 52px;
+  opacity: 0.25;
+}
+
+@keyframes cursor-ripple {
+  from {
+    width: 8px;
+    height: 8px;
+    opacity: 0.6;
+  }
+  to {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+.cursor-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  pointer-events: none;
+  translate: -50% -50%;
+  animation: cursor-ripple 0.5s ease-out forwards;
+}
